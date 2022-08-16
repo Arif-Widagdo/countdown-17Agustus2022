@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::after, *::before {
+    @apply box-border;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  
+.container-segment {
+    @apply flex flex-col gap-[.1em] items-center;
+}
+
+.segment {
+    @apply flex gap-[.1em];
+}
+
+.flip-card {
+    @apply relative inline-flex flex-col rounded-sm border;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+}
+
+
+.tops,
+.bottoms,
+.flip-card .tops-flip,
+.flip-card .bottoms-flip {
+    @apply h-[.75em] leading-[1] p-[.25em] overflow-hidden font-bold text-black
+}
+
+.tops,
+.flip-card .tops-flip {
+    @apply bg-red-500 border-b border-slate-400 ;
+}
+
+.bottoms,
+.flip-card .bottoms-flip { 
+    @apply bg-white flex items-end rounded-b-sm
+}
+
+.flip-card .tops-flip { 
+    @apply absolute w-full origin-bottom;
+    animation: flip-top 250ms ease-in;
+}
+
+@keyframes flip-top {
+    100% {
+      transform: rotateX(90deg);
+    }
+  }
+
+.flip-card .bottoms-flip { 
+    @apply absolute bottom-0 w-full origin-top;
+    animation: flip-bottom 250ms ease-out 250ms;
+    transform: rotateX(90deg);
+}
+
+  @keyframes flip-bottom {
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+
+
