@@ -1,7 +1,7 @@
 
 let previousTimeBetweenDates
 setInterval(() => {
-  const countToDate = new Date("August 17, 2022 00:00:00");
+  const countToDate = new Date("August 17, 2025 00:00:00");
   const currentDate = new Date()
   const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000)
   flipAllCards(timeBetweenDates)
